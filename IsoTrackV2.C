@@ -13,6 +13,7 @@
 
 #include <set>
 #include <iostream>
+#include <cmath>
 
 // Introduce _gainCorrectionRetriever global pointer
 //#include "gainCorrections.C"

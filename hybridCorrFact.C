@@ -9,6 +9,7 @@
 
 #include <string>
 #include <iostream>
+#include <cmath>
 
 void hybridCorrFact(string file_out = "rootfiles/CorrFact_hybrid_lxplus_v8_24CDEF.root",
 		    string file_iov = "rootfiles/CorrFact_lxplus_v8_24CDEF.root",

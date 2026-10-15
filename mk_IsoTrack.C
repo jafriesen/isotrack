@@ -17,7 +17,7 @@
 R__LOAD_LIBRARY(IsoTrack_C.so)
 R__LOAD_LIBRARY(drawIsoTrack_C.so)
 R__LOAD_LIBRARY(compareCorrFact_C.so)
-R__LOAD_LIBRARY(drawPileUp_C.so)
+R__LOAD_LIBRARY(drawPileup_C.so)
 R__LOAD_LIBRARY(rebinProfiles_C.so)
 R__LOAD_LIBRARY(drawCovariance_C.so)
 R__LOAD_LIBRARY(hybridCorrFact_C.so)

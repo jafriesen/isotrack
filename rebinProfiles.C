@@ -8,6 +8,7 @@
 #include <TProfile3D.h>
 
 #include <iostream>
+#include <cmath>
 
 void rebinProfileCustom(TProfile* p, TProfile* p_new);
 void rebinProfile2DCustom(TProfile2D* p2, TProfile2D* p2_new);

@@ -407,7 +407,7 @@ void drawIsoTracks(string mode, string era, string version) {
       -41, -40, -39, -38, -37, -36, -35, -34, -33, -32, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -21, -20, -19, -18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41
     };
     const int n_ieta = sizeof(ietas)/sizeof(ietas[0]);
-    assert(n_eta==n_ieta);
+    //assert(n_eta==n_ieta); // n_eta is undefined in this repo (leftover check); n_ieta is 82 by construction
     double vieta[n_ieta+1];
     //for (int i = 0; i != n_ieta+2; ++i) { vieta[i] = ietas[i]; }
     for (int i = 0; i != n_ieta/2; ++i) { vieta[i] = ietas[i]-0.5; }

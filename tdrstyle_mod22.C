@@ -23,6 +23,7 @@
 #include "TH1D.h"
 
 #include <iostream>
+#include <cmath>
 
 const bool kSquare = true;
 const bool kRectangular = false;
