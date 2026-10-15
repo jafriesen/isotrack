@@ -22,7 +22,7 @@ R__LOAD_LIBRARY(rebinProfiles_C.so)
 R__LOAD_LIBRARY(drawCovariance_C.so)
 R__LOAD_LIBRARY(hybridCorrFact_C.so)
 
-void mk_IsoTrack(string era = "24F", string version = "local") {
+void mk_IsoTrack(string era = "24F", string version = "local", string filelist = "") {
 
   string path = gSystem->pwd();
   cout << "Current path: " << path << endl << flush;
@@ -41,7 +41,18 @@ void mk_IsoTrack(string era = "24F", string version = "local") {
   const char *ce = era.c_str();
   const char *cv = version.c_str();
   
-  if (runLXPLUS) {
+  if (filelist!="") {
+    // Explicit file list (used by the automator; works outside /afs)
+    cout << "Reading input files from " << filelist << "..." << endl << flush;
+    ifstream fin(filelist.c_str());
+    if (!fin.is_open()) {
+      cout << "ERROR: cannot open file list " << filelist << endl << flush;
+      exit(1);
+    }
+    string s;
+    while (fin >> s) c->AddFile(s.c_str());
+  }
+  else if (runLXPLUS) {
     // Copy files to lxplus and back:
     // rsync -rutP *.C *.h 24FEB.txt voutila@lxplus.cern.ch:~/scratch0/IsoTrack/
     // rsync -rutP voutila@lxplus.cern.ch:~/scratch0/IsoTrack/IsoTrack.root ./IsoTrack_lxplus.root
