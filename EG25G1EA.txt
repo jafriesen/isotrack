@@ -1,4 +1,4 @@
-/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma0_UnCorr/EGamma0_UnCorr_40To60GeV.root
-/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma1_UnCorr/EGamma1_UnCorr_40To60GeV.root
-/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma2_UnCorr/EGamma2_UnCorr_40To60GeV.root
-/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma3_UnCorr/EGamma3_UnCorr_40To60GeV.root
+/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma0_UnCorr/EGamma0_UnCorr_EraG_PartI.root
+/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma1_UnCorr/EGamma1_UnCorr_EraG_PartI.root
+/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma2_UnCorr/EGamma2_UnCorr_EraG_PartI.root
+/eos/cms/store/group/dpg_hcal/comm_hcal/Jyoti/13p6TeV/2025/EraG_PartI/EGamma3_UnCorr/EGamma3_UnCorr_EraG_PartI.root
