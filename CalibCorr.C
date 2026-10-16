@@ -607,6 +607,7 @@ std::vector<std::string> splitString(const std::string& fLine) {
 class CalibThreshold {
 public:
   CalibThreshold(int form);
+  CalibThreshold(const char* fname);  // thresholds from a PFCuts text file
   ~CalibThreshold() {}
 
   double threshold(unsigned int detId);
@@ -630,6 +631,11 @@ CalibThreshold::CalibThreshold(int form) : form_(form) {
   else
     ok_ = true;
   std::cout << "CalibThreshold initialized with flag " << ok_ << " for form " << form_ << std::endl;
+}
+
+CalibThreshold::CalibThreshold(const char* fname) : form_(5) {
+  ok_ = fileThreshold(fname);
+  std::cout << "CalibThreshold initialized with flag " << ok_ << " from " << fname << std::endl;
 }
 
 bool CalibThreshold::fileThreshold(const char* fname) {

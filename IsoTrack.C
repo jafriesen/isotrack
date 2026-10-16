@@ -6,6 +6,8 @@
 #include <TStopwatch.h>
 #include <TDatime.h>
 #include <TMath.h>
+#include <TSystem.h>
+#include <cstdlib>
 
 #include <TProfile2D.h>
 #include <TProfile3D.h>
@@ -273,8 +275,21 @@ void IsoTrack::Loop()
 
    CalibThreshold *cCut_(0);
    if (correctCuts) {
-     cout << "Read HCalPFcuts from file textfiles/PFCuts2025.txt" << endl;
-     cCut_ = new CalibThreshold(5); // 5=2025 cuts
+     // PF thresholds must match the data-taking year: textfiles/PFCuts<year>.txt,
+     // year taken from the run number of the first entry (or ISOTRACK_PFCUTS).
+     string pfcuts = (getenv("ISOTRACK_PFCUTS") ? getenv("ISOTRACK_PFCUTS") : "");
+     if (pfcuts=="") {
+       fChain->GetEntry(0);
+       int year = (t_Run<355100 ? 0 : t_Run<366442 ? 2022 : t_Run<378981 ? 2023 :
+		   t_Run<390000 ? 2024 : t_Run<400000 ? 2025 : 2026);
+       pfcuts = Form("textfiles/PFCuts%d.txt",year);
+     }
+     cout << "Read HCalPFcuts from file " << pfcuts << " (first run " << t_Run << ")" << endl;
+     if (gSystem->AccessPathName(pfcuts.c_str())) {
+       cout << "ERROR: PF-cuts file " << pfcuts << " not found" << endl << flush;
+       exit(1);
+     }
+     cCut_ = new CalibThreshold(pfcuts.c_str());
    }
    
    Long64_t nentries = fChain->GetEntries();//fChain->GetEntriesFast();
